@@ -1,0 +1,88 @@
+curriculum: !!python/object:chess_rl.config.schema.CurriculumConfig
+  enabled: false
+  stages: []
+  transition_strategy: performance_triggered
+environment: !!python/object:chess_rl.config.schema.EnvironmentConfig
+  action_space_size: 4096
+  board_size:
+  - 8
+  - 8
+  board_type: standard_8x8
+  max_moves: 200
+  name: full_chess_8x8
+  num_input_channels: 19
+  pieces: null
+  reward_scheme: !!python/object:chess_rl.config.schema.RewardSchemeConfig
+    draw: 0.0
+    loss: -1.0
+    step_penalty: 0.0
+    win: 1.0
+  rules: !!python/object:chess_rl.config.schema.RulesConfig
+    allow_castling: true
+    allow_en_passant: true
+    allow_promotion: true
+    fifty_move_rule: true
+    threefold_repetition: true
+experiment: !!python/object:chess_rl.config.schema.ExperimentMetaConfig
+  description: Microsecond performance benchmark of RL interface and rules
+  device: auto
+  name: representation_benchmark
+  output_dir: experiments/results
+  paradigm: direct
+  seed: 42
+model: !!python/object:chess_rl.config.schema.ModelConfig
+  activation: relu
+  architecture_type: residual_cnn
+  dropout_rate: 0.0
+  kernel_size: 3
+  name: resnet_small
+  num_channels: 64
+  num_residual_blocks: 4
+  padding: 1
+  policy_head_channels: 2
+  use_batch_norm: true
+  value_head_channels: 1
+  value_hidden_dim: 64
+optimizer: !!python/object:chess_rl.config.schema.OptimizerConfig
+  betas:
+  - 0.9
+  - 0.999
+  eps: 1.0e-08
+  learning_rate: 0.001
+  loss_weights: !!python/object:chess_rl.config.schema.LossWeightsConfig
+    policy_loss_weight: 1.0
+    regularization_weight: 0.0001
+    value_loss_weight: 1.0
+  lr_scheduler: !!python/object:chess_rl.config.schema.LRSchedulerConfig
+    min_lr: 1.0e-05
+    type: cosine
+    warmup_epochs: 5
+  optimizer_type: AdamW
+  weight_decay: 0.0001
+raw_config: {}
+training: !!python/object:chess_rl.config.schema.TrainingConfig
+  checkpointing: !!python/object:chess_rl.config.schema.CheckpointingConfig
+    keep_best_checkpoint: true
+    save_interval_iters: 5
+  evaluation: !!python/object:chess_rl.config.schema.EvaluationConfig
+    baseline_opponents:
+    - random
+    - pure_mcts
+    eval_games: 20
+    eval_interval_iters: 5
+  games_per_iteration: 50
+  gradient_clip_norm: 1.0
+  mcts: !!python/object:chess_rl.config.schema.MCTSConfig
+    c_puct: 1.25
+    dirichlet_alpha: 0.3
+    dirichlet_epsilon: 0.25
+    num_simulations: 100
+    temp_threshold_move: 15
+    temperature: 1.0
+  num_iterations: 100
+  replay_buffer: !!python/object:chess_rl.config.schema.ReplayBufferConfig
+    batch_size: 128
+    capacity: 20000
+    min_samples_to_train: 500
+    prioritized: false
+  training_epochs_per_iter: 5

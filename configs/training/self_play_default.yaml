@@ -1,0 +1,23 @@
+num_iterations: 100
+games_per_iteration: 50
+mcts:
+  num_simulations: 100
+  c_puct: 1.25
+  dirichlet_alpha: 0.3
+  dirichlet_epsilon: 0.25
+  temperature: 1.0
+  temp_threshold_move: 15
+replay_buffer:
+  capacity: 20000
+  min_samples_to_train: 500
+  batch_size: 128
+  prioritized: false
+training_epochs_per_iter: 5
+gradient_clip_norm: 1.0
+evaluation:
+  eval_interval_iters: 5
+  eval_games: 20
+  baseline_opponents: ["random", "pure_mcts"]
+checkpointing:
+  save_interval_iters: 5
+  keep_best_checkpoint: true

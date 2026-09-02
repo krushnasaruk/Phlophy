@@ -1,0 +1,8 @@
+2026-09-02 23:17:46 [INFO] (exp.curriculum_progressive_staged) Initialized experiment run: curriculum_progressive_staged_20260902_231746_22d4de5f
+2026-09-02 23:17:46 [INFO] (exp.curriculum_progressive_staged) Run directory: C:\Users\Krushna\OneDrive\Documents\Phlophy\experiments\results\curriculum_progressive_staged_20260902_231746_22d4de5f
+2026-09-02 23:17:46 [INFO] (exp.curriculum_progressive_staged) Loaded config: curriculum_progressive_staged (paradigm: curriculum)
+2026-09-02 23:17:46 [INFO] (exp.curriculum_progressive_staged) Compute device: cpu
+2026-09-02 23:17:46 [INFO] (exp.curriculum_progressive_staged) Random seed: 42
+2026-09-02 23:17:46 [INFO] (exp.curriculum_progressive_staged) Constructed network: resnet_small with 839,818 parameters
+2026-09-02 23:17:46 [INFO] (exp.curriculum_progressive_staged) Curriculum enabled with 3 stages.
+2026-09-02 23:17:50 [INFO] (exp.curriculum_progressive_staged) Dry-run complete. Architecture, tracking, and initialization verified successfully.

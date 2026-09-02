@@ -1,0 +1,42 @@
+experiment:
+  name: "curriculum_progressive_staged"
+  description: "Curriculum-based staged training: Endgame -> Mini-Chess -> Full 8x8 Chess"
+  paradigm: "curriculum"
+  seed: 42
+  device: "auto"
+  output_dir: "experiments/results"
+
+environment:
+  config_path: "configs/environment/full_chess_8x8.yaml"
+
+model:
+  config_path: "configs/model/resnet_small.yaml"
+
+training:
+  config_path: "configs/training/self_play_default.yaml"
+
+optimizer:
+  config_path: "configs/training/optimizer_adamw.yaml"
+
+curriculum:
+  enabled: true
+  transition_strategy: "performance_triggered"
+  stages:
+    - stage_id: 0
+      name: "endgame_kqk"
+      env_config: "configs/environment/endgame_kqk.yaml"
+      target_win_rate: 0.85
+      min_games: 500
+      max_games: 3000
+    - stage_id: 1
+      name: "mini_chess_5x5"
+      env_config: "configs/environment/mini_chess_5x5.yaml"
+      target_win_rate: 0.80
+      min_games: 1000
+      max_games: 5000
+    - stage_id: 2
+      name: "full_chess_8x8"
+      env_config: "configs/environment/full_chess_8x8.yaml"
+      target_win_rate: null
+      min_games: 5000
+      max_games: 50000

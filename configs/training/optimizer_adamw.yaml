@@ -1,0 +1,13 @@
+optimizer_type: "AdamW"
+learning_rate: 0.001
+weight_decay: 0.0001
+betas: [0.9, 0.999]
+eps: 1.0e-8
+lr_scheduler:
+  type: "cosine"
+  warmup_epochs: 5
+  min_lr: 0.00001
+loss_weights:
+  value_loss_weight: 1.0
+  policy_loss_weight: 1.0
+  regularization_weight: 0.0001

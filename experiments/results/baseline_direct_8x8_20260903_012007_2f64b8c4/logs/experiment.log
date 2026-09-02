@@ -1,0 +1,8 @@
+2026-09-03 01:20:07 [INFO] (exp.baseline_direct_8x8) Initialized experiment run: baseline_direct_8x8_20260903_012007_2f64b8c4
+2026-09-03 01:20:07 [INFO] (exp.baseline_direct_8x8) Run directory: C:\Users\Krushna\OneDrive\Documents\Phlophy\experiments\results\baseline_direct_8x8_20260903_012007_2f64b8c4
+2026-09-03 01:20:07 [INFO] (exp.baseline_direct_8x8) Loaded config: baseline_direct_8x8 (paradigm: direct)
+2026-09-03 01:20:07 [INFO] (exp.baseline_direct_8x8) Compute device: cpu
+2026-09-03 01:20:07 [INFO] (exp.baseline_direct_8x8) Random seed: 42
+2026-09-03 01:20:07 [INFO] (exp.baseline_direct_8x8) Constructed network: resnet_small with 839,818 parameters
+2026-09-03 01:20:07 [INFO] (exp.baseline_direct_8x8) Direct baseline training (no curriculum).
+2026-09-03 01:20:08 [INFO] (exp.baseline_direct_8x8) Dry-run complete. Architecture, tracking, and initialization verified successfully.

@@ -1,0 +1,22 @@
+experiment:
+  name: "baseline_direct_8x8"
+  description: "Direct baseline training from scratch on standard 8x8 chess"
+  paradigm: "direct"
+  seed: 42
+  device: "auto"
+  output_dir: "experiments/results"
+
+environment:
+  config_path: "configs/environment/full_chess_8x8.yaml"
+
+model:
+  config_path: "configs/model/resnet_small.yaml"
+
+training:
+  config_path: "configs/training/self_play_default.yaml"
+
+optimizer:
+  config_path: "configs/training/optimizer_adamw.yaml"
+
+curriculum:
+  enabled: false

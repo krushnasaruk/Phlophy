@@ -1,0 +1,12 @@
+name: "resnet_small"
+architecture_type: "residual_cnn"
+num_residual_blocks: 4
+num_channels: 64
+kernel_size: 3
+padding: 1
+policy_head_channels: 2
+value_head_channels: 1
+value_hidden_dim: 64
+use_batch_norm: true
+dropout_rate: 0.0
+activation: "relu"

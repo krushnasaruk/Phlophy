@@ -1,0 +1,19 @@
+{
+  "num_positions": 500,
+  "total_moves_tested": 15346,
+  "seed": 42,
+  "latencies_us": {
+    "observation_encoding": 9.640999953262508,
+    "legal_move_generation": 744.1935999086127,
+    "action_encoding": 0.19063599522131006,
+    "action_decoding": 0.9658217120786508,
+    "legal_mask_generation": 7.388400030322373
+  },
+  "throughput_ops_per_sec": {
+    "observation_encoding": 103723,
+    "legal_move_generation": 1343,
+    "action_encoding": 5245599,
+    "action_decoding": 1035387,
+    "legal_mask_generation": 135347
+  }
+}

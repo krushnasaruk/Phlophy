@@ -1,0 +1,17 @@
+name: "mini_chess_5x5"
+board_type: "mini_5x5"
+board_size: [5, 5]
+num_input_channels: 19
+action_space_size: 4096
+max_moves: 80
+rules:
+  allow_castling: false
+  allow_en_passant: false
+  allow_promotion: true
+  fifty_move_rule: true
+  threefold_repetition: true
+reward_scheme:
+  win: 1.0
+  loss: -1.0
+  draw: 0.0
+  step_penalty: 0.0
